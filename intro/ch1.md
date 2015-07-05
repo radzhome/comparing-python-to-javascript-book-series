@@ -953,20 +953,12 @@ if (amount > bank_balance):
 
 ## Review
 
+Most of the fundamentals of both languages were covered. Some were covered in more detail than others:
 
-Most of the fundamentals of both languages were covered, including:
+* Comments - these are pretty straight forward in js, but get a bit wacky in py with the introduction of the docstring. This will be covered later.
+* Input - the teachings in this series won't focus too much on this, but perhaps some extra time will be granted to py to get into opening external files.
+* Output - this chapter covered the fundamentals that will be used throughout the book.
+* Operators - comparators such as equality can be frustrating to grasp but they are vital to the understanding moving forward
+* Other Fundamentals covered including Variables, Scopes, Blocks, Conditionals, Functions, Loops
 
-TODO
-
-
-* Comments
-* Input
-* Output
-* Operators
-* Variables
-* Blocks
-* Conditionals
-* Functions
-* Loops
-* Scope
-* Example
+Moving forward, we will re-visit most if not all of these concepts in more depth again to fortify and test your understanding.
