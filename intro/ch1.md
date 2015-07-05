@@ -35,15 +35,15 @@ At this point you should have a JavaScript console (Chrome Dev Tools) and Python
 
 In js, you can use online resources to get more information for whatever you are after:
 
-* "Global Objects" (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
-* (Built in Functions)[http://www.w3schools.com/jsref/jsref_obj_global.asp]
-
+* [Global Objects](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
+* [Built in Functions](http://www.w3schools.com/jsref/jsref_obj_global.asp)
+* [ES6 What's New](http://espadrine.github.io/New-In-A-Spec/es6/)
 
 In py, you can also find very good resources, some to start:
 
-* (Global Objects)[https://docs.python.org/3/library/stdtypes.html]
-* (Built in Functions)[https://docs.python.org/3/library/functions.html]
-* Python 3 What's New - https://docs.python.org/3.0/whatsnew/3.0.html
+* [Global Objects](https://docs.python.org/3/library/stdtypes.html)
+* [Built in Functions](https://docs.python.org/3/library/functions.html)
+* [Python 3 What's New](https://docs.python.org/3.0/whatsnew/3.0.html)
 
 Use `help()` in the console to get documentation (doc) on almost anything e.g.
 
@@ -70,7 +70,6 @@ import this
 For js, use the "Sources" tab of "Developers Tools" to set Break Points in your code. In the "Console" set "preserve log" to view the output from when you reload the page.
 
 This is advice for when your js code is served by a web server. For this book, you won't really need this.
-
 
 For python, there are many options. Use of the *logging* module, use of *print* and the *pdb* (python debug module) are some of the basics you can use. Include  `import pdb; pdb.set_trace()` on the line where you want to set a break point and you will get a console when the line is executed. Run `continue` to exit the break point.
 
