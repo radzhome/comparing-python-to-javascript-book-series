@@ -227,7 +227,7 @@ That may be more than you need to know about print in python for now.
 
 
 
-### Input
+## Basic Input
 
 In js, the most common way to get input is via HTML. An HTML page will show form elements (like text boxes) to a user that they can type into, and then using JS to read those values into your program's variables.
 
@@ -540,13 +540,23 @@ The newest version of JavaScript at the time of this writing (commonly called "E
 const TAX_RATE = 0.08;
 ```
 
-TODO: "use strict";
-
 py
 ```python
 TAX_RATE = 0.08	# 8% sales tax
 ```
 
+
+## Strict Mode
+
+TODO:
+
+This only applies to js, and not py
+
+````js
+"use strict";
+````
+
+ES5 added a "strict mode" to the language, which tightens the rules for certain behaviors. Generally, these restrictions are seen as keeping the code to a safer and more appropriate set of guidelines. Also, adhering to strict mode makes your code generally more optimizable by the engine. Strict mode is a big win for code, and you should use it for all your programs.
 
 
 ## Blocks
@@ -626,7 +636,25 @@ JavaScript defines a list of specific values that are considered "falsy" because
 
 js implements a `switch` statement can be used as a shorthand for a series of `if..else` statements, py does not have a switch/case.
 
-python
+```js
+switch (a) {
+    case 2:
+        // do something
+        break;
+    case 10:
+        // do another thing
+        break;
+    case 42:
+        // do yet another thing
+        break;
+    default:
+        // fallback to here
+}
+```
+The break is important if you want only the statement(s) in one case to run. If you omit break from a case, and that case matches or runs, execution will continue with the next case's statements regardless of that case matching. This so called "fall through" is sometimes useful/desired.
+
+
+python, if statement
 ```python
 bank_balance = 302.13
 amount = 99.99
