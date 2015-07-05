@@ -1,5 +1,5 @@
-# Comparing Python to Javascript Intro
-# Chapter 1: Basic Similarities
+# Comparing Python & Javascript Intro
+# Chapter 1: The Basics
 
 Welcome to the *Comparing Python to Javascript * (*CPTJ*) series.
 

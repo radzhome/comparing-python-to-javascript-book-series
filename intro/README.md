@@ -12,5 +12,5 @@
 
 * [Foreword](foreword.md)
 * [Preface](../preface.md)
-* [Chapter 1: Basic Similarities & Differences](ch1.md)
-* [Chapter 2: More Fundementals](ch2.md)
+* [Chapter 1: The Basics](ch1.md)
+* [Chapter 2: More Fundamentals](ch2.md)
