@@ -292,7 +292,7 @@ b = c = 4
 c = 2
 ```
 
-In both cases, b is now 4, but c is 2.
+In both cases, b is now 4, but c is 2. The difference is that in python the variable gets attached to the current scope, while in js, without using the `var` to declare the variable, you are assigning it in the global scope. Adding `var` creates it in the current function scope ,e.g. `var a = 3;`. In py, if the variable is declared at the function level, it is in the functions local scope. If declared in a block but then re-used in the upper scope, it is best practice to declare it in the function before the block. There will be more on scope later on in the book.
 
 Note that the use of semicolons is valid in py as well. So the above js example will execute same as py and js, and same goes with the py code. Best practice for python is not to use the semicolon, and for js it is best practice to do so.
 
