@@ -7,12 +7,9 @@ Welcome to the *Comparing Python to Javascript * (*CPTJ*) series.
 
 Some of the comparisons are not exactly one-to-one since we are not comparing apples to apples at all times.  Some concepts are high level in nature and the implementation in each language varies.
 
-The issues with JavaScript (js) is that it is built into a browser and the code one writes, must be compatible to run on older browsers as well.
+The issues with JavaScript (js) is that it is built into a browser and the code one writes, must be compatible to run on older browsers as well. Some of the code here assumes capabilities introduced in the newest version of JavaScript at the time of this writing, referred to as "ES6" for the 6th edition of ECMAScript, the official name of the JS specification. If you are using an older, pre-ES6 browser, the code may not work. A recent updated version of a modern browser, preferably Chrome should be used.
 
 Python (py) is used for server side programming so being aware of the version of Python you are using is important.  There is quite a distinction between Python 2 and 3.  We will discuss these differences as we come across them.
-
-Lets jump right in...
-
 
 ### The Sandbox Environment
 
@@ -28,8 +25,7 @@ For Python, you can also use IDLE (Integrated DeveLopment Environment), or iPyth
 
 Note that both JavaScript and Python can be compiled to *bytecode*, something we will explore later on.
 
-At this point you should have a JavaScript console (Chrome Dev Tools) and Python console ready to go! Pick what you're comfortable with and lets go.
-
+At this point you should have a JavaScript console (Chrome Dev Tools) and Python console ready to go! Pick what you're comfortable with and lets go. Take the time to write this code yourself as you read on. Move on only once you have a firm understanding of the illustrated concept.
 
 ## Getting Help
 
@@ -59,7 +55,6 @@ dir(input)
 
 Note: Without arguments, return the list of names in the current local scope.
 
-
 PEP 20 -- The Zen of Python
 ```python
 import this
@@ -76,7 +71,6 @@ For python, there are many options. Use of the *logging* module, use of *print* 
 This advice is also for comparison purposes, we will not need it for this book.
 
 There are many tools and libraries that can help you troubleshoot your code that are outside the scope of this book.
-
 
 ## Testing
 
@@ -544,20 +538,6 @@ py
 TAX_RATE = 0.08	# 8% sales tax
 ```
 
-
-## Strict Mode
-
-TODO:
-
-This only applies to js, and not py
-
-````js
-"use strict";
-````
-
-ES5 added a "strict mode" to the language, which tightens the rules for certain behaviors. Generally, these restrictions are seen as keeping the code to a safer and more appropriate set of guidelines. Also, adhering to strict mode makes your code generally more optimizable by the engine. Strict mode is a big win for code, and you should use it for all your programs.
-
-
 ## Blocks
 
 js supports this idea of general blocks but it is not commonly used:
@@ -652,7 +632,6 @@ switch (a) {
 ```
 The break is important if you want only the statement(s) in one case to run. If you omit break from a case, and that case matches or runs, execution will continue with the next case's statements regardless of that case matching. This so called "fall through" is sometimes useful/desired.
 
-
 python, if statement
 ```python
 bank_balance = 302.13
@@ -667,9 +646,7 @@ else:
 
 In both languages, f you pass it something that's not already `boolean`, coercion will occur.
 
-
 ## Loops
-
 
 while & do while in js
 ```js
@@ -695,7 +672,6 @@ do {
 	numOfCustomers = numOfCustomers - 1;
 } while (numOfCustomers > 0);
 ```
-
 
 while & do while in python, py does not support a do while but one can be simulated
 ```python
@@ -890,6 +866,8 @@ outer()
 ## Example Program
 
 
+Try this yourself. Read the code in the language you understand best, then try to re-write the code in the other language.
+
 ```js
 const SPENDING_THRESHOLD = 200;
 const TAX_RATE = 0.08;
@@ -971,69 +949,6 @@ if (amount > bank_balance):
     print("You can't afford this purchase. :(")
 
 # You can't afford this purchase. :(
-```
-
-
-## Objects - Methods, Properties, & Attributes
-
-Methods are just functions that belong to an object. They differ from functions because they have access to the objects scope and they are implicitly passed for the object for which it was called.
-
-In js,
-
-TODO
-
-In py, attributes of an object include attributes, properties (special attributes) and methods:
-```python
->>> class tester(object):
-...     foo = 1 # normal attribute
-...     @property
-...     def p1(self):
-...         return 'a property'
-...     def f1(self):
-...         return 'a function'
-...
->>> t = tester()
->>> dir(t)
-['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'f1', 'p1']
-```
-
-Properties are called without any parentheses so you cannot pass parameters to them. The return type is not function, but what the property returns:
-```python
->>> t.p1
-'a property'
->>> t.f1
-<bound method tester.f1 of <__main__.tester object at 0x103905908>>
->>> t.f1()
-'a function'
->>> t.p1()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: 'str' object is not callable
-```
-
-Notice `t.f1` returns the method.
-
-py 2 and py 3 object class slightly differ as one can see when examining them using `dir(object)`.
-
-
-In general speaking terms a property and an attribute are the same thing. There is a property decorator in py which provides getter/setter access to an attribute (or other data).
-```python
-class MyObject(object):
-    # This is a normal attribute
-    foo = 1
-    @property
-    def bar(self):
-        return self.foo
-    @bar.setter
-    def bar(self, value):
-        self.foo = value
-
-obj = MyObject()
-assert obj.foo == 1
-assert obj.bar == obj.foo
-obj.bar = 2
-assert obj.foo == 2
-assert obj.bar == obj.foo
 ```
 
 ## Review
