@@ -23,7 +23,7 @@ For running Python code, we will use the python console and at times write scrip
 
 For Python, you can also use IDLE (Integrated DeveLopment Environment), or iPython Notebook. When writing scripts, using an IDE like PyCharm will provide usable feedback and code completion as you write code.
 
-Note that both JavaScript and Python can be compiled to *bytecode*, something we will explore later on.
+Note that both JavaScript and Python can be compiled to *bytecode*, something we will explore later on when we talk about the misconceptions of the languages, specifically them both being interpreted languages.
 
 At this point you should have a JavaScript console (Chrome Dev Tools) and Python console ready to go! Pick what you're comfortable with and lets go. Take the time to write this code yourself as you read on. Move on only once you have a firm understanding of the illustrated concept.
 
@@ -430,9 +430,7 @@ Logical comparison (compound conditionals) short circuits as soon as it can (as 
 
 Bitwise is a mathematical calculation between the two values.
 
-
 ## Variable Types & Values
-
 
 JavaScript has built-in types for each of these so called *primitive* values:
 
@@ -440,9 +438,9 @@ JavaScript has built-in types for each of these so called *primitive* values:
 * `string` (one or more characters, words, sentences).
 * `boolean` (`true` or `false`).
 * `date`
-* `array`
 * `object`
-* `null`
+* `null` and `undefined`
+* `symbol` (new to ES6)
 
 Note `typeof` is a built in function in js, but `type` in py is the root `object` of all objects.
 
@@ -461,7 +459,6 @@ Python:
 There are other types in py that will not be covered here.
 
 Literals are the same in both languages. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) its a preference in both languages.
-
 
 ### Converting Between Types
 
@@ -516,12 +513,11 @@ globals()
 locals()
 ```
 
-In the top scope, they should return the same, i.e. `locals() == globals()`
+In the top scope, they should return the same, i.e. `locals() == globals()`.
 
 
-*constant* declaration is:
+The *constant* declaration looks like this in js:
 
-js
 ```js
 var TAX_RATE = 0.08;	// 8% sales tax
 ```
@@ -533,7 +529,8 @@ The newest version of JavaScript at the time of this writing (commonly called "E
 const TAX_RATE = 0.08;
 ```
 
-py
+In py its similar.
+
 ```python
 TAX_RATE = 0.08	# 8% sales tax
 ```
@@ -569,7 +566,6 @@ x(3)
 ```
 
 A block statement does not need a semicolon (`;`) to conclude it.
-
 
 In py, an if block looks like so, and proper indentation of the same length is required:
 
@@ -786,9 +782,9 @@ print(amount)			# "$99.99"
 ```
 
 
-### Scope
+### Lexical Scope
 
-*lexical scope*, in JavaScript, each function gets its own scope, aka. "scoped" variables are local to the scope.
+In js, each function gets its own scope, aka. "scoped" variables are local to the scope.  It's not enough to have a basic understanding of scope.
 
 js
 ```js
@@ -807,6 +803,11 @@ function two() {
 one();		// 1
 two();		// 2
 ```
+
+In py (like in js), namespaces have different lifetimes. The namespace containing the built-in names is created when the Python interpreter starts up, and is never deleted. The global namespace for a module is created when the module definition is read in; normally, module namespaces also last until the interpreter quits.
+
+The local namespace for a function is created when the function is called, and deleted when the function returns or raises an exception that is not handled within the function.
+
 
 py
 ```python
@@ -950,6 +951,30 @@ if (amount > bank_balance):
 
 # You can't afford this purchase. :(
 ```
+
+## General Similarities
+
+
+### Object
+
+The `object` in js, also referred to as the JSON object is quite similar to the combined implementation of the `dict` and `list` type in py.
+
+```js
+foo = {}  // typeof(foo) returns object
+foo['bar'] = [1, 2, 3] //typeof(foo['bar'] ) also returns object
+```
+
+```py
+foo = {} # dict() would also work here, but the string literal is faster. Its all about preference.
+foo['bar'] = [1, 2, 3]  # list inside a dict, type(foo['bar']) returns list
+```
+
+As can be seen in the above examples, js does not distinguish between a mapping and sequence but python does. To js they are both of type `object` and to python a mapping is a `dict` while a sequence here is a  `list`.
+
+The confusion between the two languages, is that everything in py is an object, except for type which is object's parent class. So when you define a custom class in py 2, extend it from `object`, if you don't you will extend from the classic object called `classobj`. New object in py 3 extend from `type`.
+
+TODO
+
 
 ## Review
 
