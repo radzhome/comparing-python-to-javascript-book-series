@@ -1,6 +1,6 @@
 # Comparing Python & Javascript (book series)
 
-This is a series of books that compare the core mechanisms of the JavaScript and Python language. The objective is to learn one language based on another or learn both at the same time. This book series is aimed at people with at least a basic understanding of programming with some Python or JavaScript programming experience being a plus.
+This is a series of books that compare the core mechanisms of the JavaScript and Python language. The objective of this series is to give readers the power to learn one language based on another. Of course, learning both languages at the same time is also not a bad idea but it would require a lot more work. This book series is aimed at people with at least a basic understanding of programming with some Python or JavaScript programming experience, with anything extra being a plus.
 
 **Read the [Preface](preface.md).**
 
