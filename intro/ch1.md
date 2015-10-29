@@ -365,22 +365,26 @@ In js, its best practice to use strict equality when making comparisions unless 
 
 
 ```js
-0 == '0'  //true
-0 === '0'  //false
-0 == ''  //true
-0 === '0' //false
-
-1 === true //false
-1 == true //true
-0 == false //true
+0 == '0'  //  true
+0 === '0'  //  false
+0 == ''  //  true
+0 === ''  //  false
+0 === '0' //  false
+'' ===   false //  false
+'' == false //  true
+1 === true //  false
+1 == true //  true
+0 == false //  true
 false == null //false
-0 == !!(null) //true
+[] == 0 //  true
+[] ===  0 //  false
+0 == !!(null) //  true
 ```
 
 Not equal
 ```js
-1 != true //false
-1 !== true //true
+1 != true //  false
+1 !== true //  true
 ```
 
 
