@@ -379,6 +379,7 @@ false == null //false
 [] == 0 //  true
 [] ===  0 //  false
 0 == !!(null) //  true
+new Array() == false //  true
 ```
 
 Not equal
@@ -588,9 +589,18 @@ if (amount > 10) {			// <-- block attached to `if`
 
 A closure
 ```js
-x = function(val){console.log(Math.pow(val,2)+5)}
+var x = function(val){console.log(Math.pow(val,2)+5)}
 x(3)
 ```
+
+A self calling function in javscript, in python you wouldn't do this:
+```js
+(function(a,b){
+    var result = a+b;
+    return result;
+})(10,20)
+```
+
 
 A block statement does not need a semicolon (`;`) to conclude it.
 
