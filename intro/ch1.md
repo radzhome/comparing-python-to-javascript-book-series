@@ -387,6 +387,8 @@ Not equal
 1 !== true //  true
 ```
 
+Note that `undefined`, `null`, 0, `false`, `NaN`, and empty string `''` are always falsies.
+
 
 TODO: weird cases, on different sides of sign, where == returns true but != does not return false,  falsies .. truthies
 
@@ -405,7 +407,7 @@ These are the only cases that return *True* when type is different:
 0j == False
 ```
 
-For the above cases, you can check the `type` of object to differenciate between the two. If you think about it though, it would be rare to do such comparisons unless it's in a single argument conditional which we will get into later.
+For the above cases, you can check the `type` of object to differenciate between the two. If you think about it though, it would be rare to do such comparisons unless it's in a single argument conditional which would cast the expression to `bool`. We will get into that later.
 
 ```
 >>> x = True
@@ -449,12 +451,14 @@ Bitwise is a mathematical calculation between the two values.
 
 JavaScript has built-in types for each of these so called *primitive* values:
 
-* `number`.
+* `number`
+* `NaN` (this is a number, see `typeof NaN;` but `null instanceof Object;` evaluates false)
 * `string` (one or more characters, words, sentences).
 * `boolean` (`true` or `false`).
 * `date`
 * `object`
-* `null` and `undefined`
+* `null` (this is an object!)
+* `undefined`
 * `symbol` (new to ES6)
 
 Note `typeof` is a built in function in js, but `type` in py is the root `object` of all objects.
@@ -622,7 +626,7 @@ else{
     console.log("I can't afford it.");
 }
 ```
-JavaScript defines a list of specific values that are considered "falsy" because when coerced to a `boolean`, they become `false` -- these include values like `0` and `""`. Any other value not on the "falsy" list is automatically "truthy" -- when coerced to a `boolean` they become `true`.
+JavaScript defines a list of specific values that are considered "falsy" because when coerced to a `boolean`, they become `false` -- these include values like `0`, `undefined`, `NaN`, `null` and `""`. Any other value not on the "falsy" list is automatically "truthy" -- when coerced to a `boolean` they become `true`.
 
 js implements a `switch` statement can be used as a shorthand for a series of `if..else` statements, py does not have a switch/case.
 
