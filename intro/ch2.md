@@ -111,3 +111,26 @@ typeof arr;   // return "object"
 arr  instanceof Array // true
 arr.constructor();  //[]
 ```
+
+## Array Access
+
+Getting a random element
+
+js
+```js
+var items = [1,3,4,5,6];
+var  randomItem = items[Math.floor(Math.random() * items.length)];
+// specific range
+var max = 10; var min = 1;
+var x = Math.floor(Math.random() * (max - min + 1)) + min;
+```
+
+py
+```
+import random
+items = [1,3,4,5,6]
+random_item = random.choice(items)
+# specific range
+max, min = 10, 1
+x = random.choice(range(min,max+1))
+```
