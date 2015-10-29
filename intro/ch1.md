@@ -461,8 +461,12 @@ JavaScript has built-in types for each of these so called *primitive* values:
 * `null` (this is an object!)
 * `undefined`
 * `symbol` (new to ES6)
-*
-Note `typeof` is a built in function in js used to  return a string that represents the primitive type of a variable, Note that `typeof` will return `"object"` for the majority of object types (Array, Date, and more). In python however, `type` is the root `object` of all objects.  If you cast type twice around `None` you will see it extends from `type`:
+
+Note: `typeof` is a built in function in js used to  return a string that represents the primitive type of a variable, Note that `typeof` will return `"object"` for the majority of object types (Array, Date, and more). In python however, `type` is the root `object` of all objects.  If you cast type twice around `None` you will see it extends from `type`:
+
+Note: `null` is for objects, `undefined` is for variables, properties, and methods. To be `null`, an object has to be defined, otherwise it will be `undefined`.
+
+
 
 ```python
 >>> type(None)
