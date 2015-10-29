@@ -361,7 +361,7 @@ In py, you have to do it the long way, `a+=1` which isn't all that bad.
 Things get interesting here as both languages handle equality a bit differently.
 
 
-In js, its best practice to use strict equality when making comparisions unless you are comparing `typeof()`.
+In js, its best practice to use strict equality when making comparisions unless you are comparing `typeof()`.  The `==` (or `!=`) operator performs an automatic type conversion if needed. The `===` (or `!==`) operator will not perform any conversion. It compares the value and the type, which could be considered faster than `==`.
 
 
 ```js
@@ -386,7 +386,7 @@ Not equal
 
 TODO: weird cases, on different sides of sign, where == returns true but != does not return false,  falsies .. truthies
 
-In python, there is no loose or strict equality. For the most part it is pretty strict. You should be okay with Python's equality comparator as long as its clear to you that zero of any numeric type (0, 0L, 0.0, 0j) is always equal to False and 1 of any numeric type except complex numbers (1, 1L, 1.0) is True.
+In python, there is no loose or strict equality. For the most part it is pretty strict. You should be okay with python's equality comparator as long as its clear to you that zero of any numeric type (0, 0L, 0.0, 0j) is always equal to False and 1 of any numeric type except complex numbers (1, 1L, 1.0) is True.
 
 These are the only cases that return *True* when type is different:
 
@@ -399,6 +399,17 @@ These are the only cases that return *True* when type is different:
 0.0 == False
 0L == False
 0j == False
+```
+
+For the above cases, you can check the `type` of object to differenciate between the two. If you think about it though, it would be rare to do such comparisons unless it's in a single argument conditional which we will get into later.
+
+```
+>>> x = True
+>>> y = 1
+>>> x == y
+True
+>>> type(x) == type(y)
+False
 ```
 
 ###Logical & Bitwise And, Or
