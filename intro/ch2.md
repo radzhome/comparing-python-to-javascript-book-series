@@ -88,3 +88,26 @@ obj.bar = 2
 assert obj.foo == 2
 assert obj.bar == obj.foo
 ```
+
+
+## Constructors
+
+TODO
+
+constructor  is a property of the internal prototype property, which could be overridden by code.
+
+
+## Instance Of Comparison
+
+TODO
+
+isinstance in python
+
+instanceof is another js operator that check in all the prototypes chain the constructor it returns true if it’s found and false if not.
+
+```javascript
+var arr = ["a", "b", "c"];
+typeof arr;   // return "object" 
+arr  instanceof Array // true
+arr.constructor();  //[]
+```
