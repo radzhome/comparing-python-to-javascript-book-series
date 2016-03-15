@@ -134,3 +134,18 @@ random_item = random.choice(items)
 max, min = 10, 1
 x = random.choice(range(min,max+1))
 ```
+
+TODO:
+## Lambda and Immediately Invoked Function Expression (IIFE)
+
+js
+```js
+(function(a, b) {
+  return a + b
+})(1, 5);
+
+This is as close as you can 
+py
+```
+func = lambda x, y: x + y
+func(1, 5)
